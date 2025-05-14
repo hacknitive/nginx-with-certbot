@@ -25,7 +25,8 @@ services:
       - ./certbot/letsencrypt:/etc/letsencrypt
       # Mount the webroot for ACME challenge responses.
       - ./nginx/html:/usr/share/nginx/html
+      - ./certbot/renew.sh:/renew.sh:ro
     # This command renews certificates every 12 hours.
-    entrypoint: [ "sh", "-c", "while", "true;", "do", "certbot", "renew;", "sleep", "12h;", "done"]
-    # command: "while true; do certbot renew; sleep 12h; done"
+    entrypoint: [ "sh", "-c" ]
+    command: "/renew.sh"
     restart: unless-stopped
