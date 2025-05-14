@@ -1,4 +1,4 @@
-docker-compose run --rm certbot certonly \
+docker compose run --rm certbot certonly \
   --webroot \
   --webroot-path=/usr/share/nginx/html \
   --email hacknitive@gmail.com \
