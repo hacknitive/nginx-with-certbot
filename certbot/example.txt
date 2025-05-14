@@ -5,3 +5,11 @@ docker compose run --rm certbot certonly \
   --agree-tos \
   --no-eff-email \
   -d test1.x50.ir
+
+
+  docker compose run --rm certbot certonly \
+  --standalone \
+  --email hacknitive@gmail.com \
+  --agree-tos \
+  --no-eff-email \
+  -d test1.x50.ir
