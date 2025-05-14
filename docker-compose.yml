@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nginx:
-    image: nginx:1.27-alpine-slim
+    image: docker.arvancloud.ir/nginx:1.27-alpine-slim
     ports:
       - "80:80"
       - "443:443"
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
 
   certbot:
-    image: certbot/certbot
+    image: docker.arvancloud.ir/certbot/certbot
     volumes:
       # Share the persistent Let's Encrypt certificate directory.
       - ./certbot/letsencrypt:/etc/letsencrypt
